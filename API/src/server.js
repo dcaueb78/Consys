@@ -1,10 +1,14 @@
-const  { GraphQLServer } = require('graphql-yoga');
-const path = require ('path');
-const resolvers = require('./resolvers.js');
+const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes');
+const cors = require('cors');
 
-const server = new GraphQLServer({
-  typeDefs: path.resolve(__dirname, 'schema.graphql'),
-  resolvers
-});
+const server = express();
 
-server.start();
+mongoose.connect('mongodb+srv://admin:admin@cluster0-wsft3.mongodb.net/consys?retryWrites=true&w=majority', { useNewUrlParser: true });
+
+server.use(cors());
+server.use(express.json());
+server.use(routes);
+
+server.listen(3000);
