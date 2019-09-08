@@ -8,6 +8,7 @@ routes.get('/containers', ContainerController.index);
 routes.post('/containers', ContainerController.store);
 
 //rotas usuário
-routes.post('/user', UserController.store);
+routes.get('/login', UserController.signIn);
+routes.post('/user/create', UserController.store);
 
 module.exports = routes;
