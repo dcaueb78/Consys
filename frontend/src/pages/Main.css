@@ -1,0 +1,195 @@
+.main-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.main-container h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: rgb(11, 109, 238);
+}
+
+.main-container th {
+    justify-content: center;
+    align-content: center;
+    padding-left: 100px;
+    color: #FFFFFF;
+}
+
+.main-container td {
+    padding-left: 100px;
+}
+
+.main-container h2 button {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+}
+
+.logout {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 30px;
+    display: flex;
+    color: rgb(255, 20, 20);
+}
+
+.main-container ul li {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container ul li img {
+    max-width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.main-container ul li footer {
+    flex: 1;
+    background: #FFF;
+    border: 1px solor #eee;
+    padding: 15px 20px;
+    text-align: left;
+    border-radius: 0 0 5px 5px;
+}
+
+.main-container ul li footer strong {
+    font-size: 16px;
+    color: #333;
+}
+
+.main-container ul li footer p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.main-container ul li .buttons {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.main-container ul li .buttons button {
+    height: 50px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.05);
+    border: 0;
+    border-radius: 4px;
+    background: #FFF;
+}
+
+.main-container ul li .buttons button:hover img {
+    transform: translateY(-5px);
+    transition: all .2s;
+}
+
+.main-container .empty {
+    font-size: 32px;
+    color: #999;
+    font-weight: bold;
+    margin-top: 300px;
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  table * {
+    position: relative;
+  }
+  table td, table th {
+    padding-left: 8px;
+  }
+  table thead tr {
+    height: 60px;
+    background: rgb(11, 109, 238);
+    font-size: 16px;
+  }
+  table tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  table td, table th {
+    text-align: left;
+  }
+  table td.l, table th.l {
+    text-align: right;
+  }
+  table td.c, table th.c {
+    text-align: center;
+  }
+  table td.r, table th.r {
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 35.5em) {
+    table {
+      display: block;
+    }
+    table > *, table tr, table td, table th {
+      display: block;
+    }
+    table thead {
+      display: none;
+    }
+    table tbody tr {
+      height: auto;
+      padding: 8px 0;
+    }
+    table tbody tr td {
+      padding-left: 45%;
+      margin-bottom: 12px;
+    }
+    table tbody tr td:last-child {
+      margin-bottom: 0;
+    }
+    table tbody tr td:before {
+      position: absolute;
+      font-weight: 700;
+      width: 40%;
+      left: 10px;
+      top: 0;
+    }
+    table tbody tr td:nth-child(1):before {
+      content: "Code";
+    }
+    table tbody tr td:nth-child(2):before {
+      content: "Stock";
+    }
+    table tbody tr td:nth-child(3):before {
+      content: "Cap";
+    }
+    table tbody tr td:nth-child(4):before {
+      content: "Inch";
+    }
+    table tbody tr td:nth-child(5):before {
+      content: "Box Type";
+    }
+  }
+  body {
+    font: 400 14px 'Calibri','Arial';
+    padding: 20px;
+  }
+  
+  blockquote {
+    color: white;
+    text-align: center;
+  }
+  

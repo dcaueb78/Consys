@@ -15,6 +15,7 @@ module.exports = {
     },
 
     async signIn(req, res) {
+        console.log(req);
         const { login, password } = req.body;
         const reqLogin = login;
         const reqPassword = password; 
