@@ -31,8 +31,8 @@ export default function Login({ history }) {
 
     return (
         <div className="login-container">
-            <form onSubmit={handleSubmit}>
-                <img className="logo" src={logo} alt="Tindev" />
+            <form id="login-container-form" onSubmit={handleSubmit}>
+                <img id="logo" className="logo" src={logo} alt="Tindev" />
                 <input 
                     placeholder="Digite seu usuário"
                     value={login}

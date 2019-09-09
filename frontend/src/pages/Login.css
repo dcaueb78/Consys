@@ -12,6 +12,13 @@
     flex-direction: column;
 }
 
+#login-container-form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
 .login-container form input {
     margin-top: 20px;
     border: 1px solid #ddd;
@@ -40,4 +47,9 @@
 
 .logo {
     width: 350px;
+}
+
+#logo {
+    width: 250px;
+    margin-left: 30px;
 }
