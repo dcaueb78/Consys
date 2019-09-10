@@ -4,7 +4,6 @@ const session = require('express-session');;
 module.exports = {
     async store(req, res) {
         const { name, login, password } = req.body;
-
         const user = await User.create({
             name,
             login,
@@ -15,32 +14,15 @@ module.exports = {
     },
 
     async signIn(req, res) {
-        console.log(req);
         const { login, password } = req.body;
-        const reqLogin = login;
-        const reqPassword = password; 
+        let jsonResponse = {userLogin: login, signIn: false};
 
-        let jsonResp = {
-            userLogin: reqLogin,
-            signIn: null,
-        };
+        const user = await User.findOne({ login, password }, { login: 1, name: 1});
 
-        let entry = await User.find({
-           login: reqLogin,
-        });
-
-        if (entry[0]) {
-            jsonResp.signIn = false;
-            let pass = await User.find({
-                login: reqLogin,
-                password: reqPassword,
-            });
-            if(pass[0]) {
-                jsonResp.signIn = true;
-                jsonResp.userName = pass[0].name;
-            }
+        if(user) {
+            jsonResponse.signIn = true;
         }
 
-        return res.json(jsonResp)
+        return res.json(jsonResponse);
     }
 }
