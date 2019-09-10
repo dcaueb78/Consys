@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Login.css';
+import './style.css';
 
-import api from '../services/api';
+import api from '../../services/api';
 
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 
 export default function Login({ history }) {
     
@@ -23,7 +23,8 @@ export default function Login({ history }) {
         })
 
         const { userLogin, signIn } = response.data;
-        if(signIn===true){
+        
+        if(signIn === true){
             localStorage.setItem('login', userLogin);
             history.push(`/main`);
         }

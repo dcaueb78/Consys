@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import './Container.css';
+import './style.css';
 
-import api from '../services/api';
+import api from '../../services/api';
+import logo from '../../assets/logo.png';
 
-import logo from '../assets/logo.png';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons'
 
 export default function Login({ history }) {
 
@@ -40,22 +37,9 @@ export default function Login({ history }) {
         history.push(`/main`);
     }
 
-    async function logout(e) {
-        e.preventDefault();
-        localStorage.removeItem('login');
-        history.push(`/`);
-    }
-
     return (
         <div className="container">
-            <div className="logout-button">
-                <h1 className="name">Conectado como </h1>
-                <FontAwesomeIcon className="perfil-ico" icon={faUser} />
-                <h1 className="username">{username}</h1>
-                <button className="logout" onClick={logout}>
-                    <FontAwesomeIcon icon={faSignOutAlt} />
-                </button>
-            </div>
+
             <div className="login-container">
                 <form onSubmit={handleSubmit}>
                     <img className="logo" src={logo} alt="Tindev" />

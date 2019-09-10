@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Main.css';
+import './style.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons'
 
-import api from '../services/api';
+import api from '../../services/api';
 
 export default function Main({ history }) {
     if (!localStorage.getItem('login')) {
         history.push(`/`);
     }
-
-    const username = localStorage.getItem('login');
 
     const [containers, setContainers] = useState('');
 
@@ -36,14 +34,6 @@ export default function Main({ history }) {
 
     return (
         <div>
-            <div className="logout-button">
-                <h1 className="name">Conectado como </h1>
-                <FontAwesomeIcon className="perfil-ico" icon={faUser} />
-                <h1 className="username">{username}</h1>
-                <button className="logout" onClick={logout}>
-                    <FontAwesomeIcon icon={faSignOutAlt} />
-                </button>
-            </div>
             <div className="main-container">
                 <h1>Listagem de Containers</h1>
                 <table>
