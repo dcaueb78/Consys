@@ -13,5 +13,5 @@ server.use(express.json());
 server.use(routes);
 
 server.listen(3333, () => {
-    console.log("Listening on localhost:3000");
+    console.log("Listening on localhost:3333");
 });
