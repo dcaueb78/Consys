@@ -5,6 +5,9 @@ import api from '../services/api';
 
 import logo from '../assets/logo.png';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons'
+
 export default function Login({ history }) {
 
     const [motoristName, setMotoristName] = useState('');
@@ -14,6 +17,8 @@ export default function Login({ history }) {
     if (!localStorage.getItem('login')) {
         history.push(`/`);
     }
+
+    const username = localStorage.getItem('login');
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -43,7 +48,14 @@ export default function Login({ history }) {
 
     return (
         <div className="container">
-            <button className="logout" onClick={logout}>Sair</button>
+            <div className="logout-button">
+                <h1 className="name">Conectado como </h1>
+                <FontAwesomeIcon className="perfil-ico" icon={faUser} />
+                <h1 className="username">{username}</h1>
+                <button className="logout" onClick={logout}>
+                    <FontAwesomeIcon icon={faSignOutAlt} />
+                </button>
+            </div>
             <div className="login-container">
                 <form onSubmit={handleSubmit}>
                     <img className="logo" src={logo} alt="Tindev" />
