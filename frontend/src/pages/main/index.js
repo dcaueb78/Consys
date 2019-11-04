@@ -61,7 +61,7 @@ export default function Main({ history, match }) {
                   <td>{container.type}</td>
                   <td>{container.size} pés</td>
                   <td>
-                    <Link to={"/main/edit/" + container._id}>
+                    <Link to={"/edit/" + container._id}>
                       <FaEdit color="rgb(11, 109, 238)" size="18" />
                     </Link>
                     <Link to={"/main/delete/" + container._id}>

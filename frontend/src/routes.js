@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Login from './pages/login';
 import Main from './pages/main';
 import Container from './pages/container';
+import Edit from './pages/edit';
 
 import Header from './components/Header';
 
@@ -14,6 +15,7 @@ export default function Routes(){
             <Route path="/" exact component={Login} />
             <Route path="/main" component={Main} />
             <Route path="/main/delete/:id" component={Main} />
+            <Route path="/edit/:id" component={Edit} />
             <Route path="/container" exact component={Container} />
         </BrowserRouter>
     );
