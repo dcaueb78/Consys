@@ -16,7 +16,8 @@ export default function Main({ history, match }) {
   const [containers, setContainers] = useState("");
 
   if (match.params.id) {
-    api.post("/containers", {});
+    api.delete(`/containers/${match.params.id}`);
+    history.push("/main")
   }
 
   useEffect(() => {
