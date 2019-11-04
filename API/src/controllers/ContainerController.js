@@ -8,6 +8,12 @@ module.exports = {
     return res.json(containers);
   },
 
+  async indexById(req, res) {
+    const containers = await Container.findById(req.params.id);
+
+    return res.json(containers);
+  },
+
   //cria um novo container
   async store(req, res) {
     const { motoristName, type, size } = req.body;
