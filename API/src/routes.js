@@ -1,10 +1,13 @@
 const express = require("express");
 
-const authMiddleware = require('../src/middlewares/auth');
+import authMiddleware from '../src/middlewares/auth';
+import SessionController from '../src/controllers/SessionController';
 
 const routes = express.Router();
 
-routes.use(authMiddleware.default);
+routes.post('/session', SessionController.store);
+
+//routes.use(authMiddleware);
 
 
 
