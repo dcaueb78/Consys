@@ -1,17 +1,31 @@
 const express = require("express");
-const ContainerController = require("./controllers/ContainerController");
-const UserController = require("./controllers/UserController");
+
+import SessionController from '../src/controllers/SessionController';
+import authMiddleware from '../src/middlewares/auth';
+import ConfiguracoesController from '../src/controllers/ConfiguracoesController';
+import ClientesController from '../src/controllers/ClientesController';
+import MotoristasController from '../src/controllers/MotoristasController';
+import RegistrosController from '../src/controllers/RegistrosController';
+
 const routes = express.Router();
 
-//rotas container
-routes.get("/containers", ContainerController.index);
-routes.get("/containers/:id", ContainerController.indexById);
-routes.post("/containers", ContainerController.store);
-routes.put("/containers/:id", ContainerController.update);
-routes.delete("/containers/:id", ContainerController.delete);
+routes.post('/login', SessionController.store);
 
-//rotas usuário
-routes.post("/login", UserController.signIn);
-routes.post("/user/create", UserController.store);
+routes.use(authMiddleware);
+
+routes.get('/config', ConfiguracoesController.index);
+routes.post('/config', ConfiguracoesController.store);
+
+routes.get('/clientes', ClientesController.index);
+routes.post('/clientes', ClientesController.store);
+routes.delete('/clientes/:id', ClientesController.delete);
+
+routes.get('/motoristas', MotoristasController.index);
+routes.post('/motoristas', MotoristasController.store);
+routes.delete('/motoristas/:id', MotoristasController.delete);
+
+routes.get('/registros', RegistrosController.index);
+routes.post('/entrada', RegistrosController.entrada);
+routes.post('/saida', RegistrosController.saida);
 
 module.exports = routes;

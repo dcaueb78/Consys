@@ -1,12 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const routes = require('./routes');
 const cors = require('cors');
 
-
 const server = express();
-
-mongoose.connect('mongodb+srv://admin:admin@cluster0-wsft3.mongodb.net/consys?retryWrites=true&w=majority', { useNewUrlParser: true });
+import './database';
 
 server.use(cors());
 server.use(express.json());
