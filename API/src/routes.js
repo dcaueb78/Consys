@@ -18,9 +18,11 @@ routes.post('/config', ConfiguracoesController.store);
 
 routes.get('/clientes', ClientesController.index);
 routes.post('/clientes', ClientesController.store);
+routes.delete('/clientes/:id', ClientesController.delete);
 
 routes.get('/motoristas', MotoristasController.index);
 routes.post('/motoristas', MotoristasController.store);
+routes.delete('/motoristas/:id', MotoristasController.delete);
 
 routes.get('/registros', RegistrosController.index);
 routes.post('/entrada', RegistrosController.entrada);
