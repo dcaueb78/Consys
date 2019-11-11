@@ -4,7 +4,6 @@ class Configuracoes extends Model {
   static init(sequelize) {
     super.init(
       {
-        id: Sequelize.INTEGER,
         qtd_containers: Sequelize.INTEGER,
         usuario_id: Sequelize.INTEGER,
       },

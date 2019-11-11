@@ -17,6 +17,14 @@ module.exports = {
         type: Sequelize.CHAR(10),
         allowNull: false,
       },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
     });
   },
 

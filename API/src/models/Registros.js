@@ -4,7 +4,6 @@ class Registros extends Model {
   static init(sequelize) {
     super.init(
       {
-        id: Sequelize.INTEGER,
         data_entrada: Sequelize.DATE,
         motorista_id: Sequelize.INTEGER,
         cliente_id: Sequelize.INTEGER,

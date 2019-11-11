@@ -9,11 +9,11 @@ import Registros from '../models/Registros';
 import Usuarios from '../models/Usuarios';
 
 const models = [
-    Clientes,
-    Configuracoes,
-    Motoristas,
-    Registros,
-    Usuarios,
+  Clientes,
+  Configuracoes,
+  Motoristas,
+  Registros,
+  Usuarios,
 ]
 
 class Database {
